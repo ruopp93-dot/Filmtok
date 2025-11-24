@@ -181,7 +181,8 @@
                 app = initializeApp(firebaseConfig);
                 auth = getAuth(app);
                 db = getFirestore(app);
-                setLogLevel('Debug');
+                // Уровень логирования должен быть в нижнем регистре, иначе Firestore выбросит ошибку конфигурации
+                setLogLevel('debug');
                 initAuth();
             } catch (error) {
                 console.warn('Firebase is not initialized:', error.message);
